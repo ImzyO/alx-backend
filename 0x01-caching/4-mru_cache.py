@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-""" mru cach module """
+"""
+a class MRUCache that inherits from
+BaseCaching and is a caching system:
+"""
 
 
 from collections import deque
@@ -7,15 +10,14 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class MRUCache(BaseCaching):
-    """ MRU """
-
+    """ MRU class """
     def __init__(self):
-        """ initilize """
+        """ initilizer """
         super().__init__()
         self.queue = deque()
 
     def put(self, key, item):
-        """ put """
+        """ putto create """
         if key and item:
             if key in self.cache_data:
                 self.queue.remove(key)
@@ -27,7 +29,7 @@ class MRUCache(BaseCaching):
             self.cache_data[key] = item
 
     def get(self, key):
-        """ get """
+        """ geti to retrieve """
         if key in self.cache_data:
             self.queue.remove(key)
             self.queue.append(key)

@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-""" lru cach module """
+"""a class LRUCache that inherits from 
+BaseCaching and is a caching system:
+"""
 
 
 from collections import deque
@@ -7,15 +9,15 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class LRUCache(BaseCaching):
-    """ LRU """
+    """LRU class"""
 
     def __init__(self):
-        """ constructor """
+        """ initializer"""
         super().__init__()
         self.queue = deque()
 
     def put(self, key, item):
-        """ put """
+        """put to create"""
         if key and item:
             if key in self.cache_data:
                 self.queue.remove(key)
@@ -27,7 +29,7 @@ class LRUCache(BaseCaching):
             self.cache_data[key] = item
 
     def get(self, key):
-        """ get """
+        """get to etrieve """
         if key in self.cache_data:
             self.queue.remove(key)
             self.queue.append(key)

@@ -1,16 +1,20 @@
 #!/usr/bin/python3
-""" 5. LFU Caching
+"""
+a class LFUCache that inherits
+from BaseCaching and is a caching system:
 """
 
 from enum import Enum
 from heapq import heappush, heappop
 from itertools import count
 
+
 BaseCaching = __import__("base_caching").BaseCaching
 
 
 class HeapItemStatus(Enum):
-    """ HeapItemStatus
+    """
+    HeapItemStatus
     """
     ACTIVE = 1
     INACTIVE = 2
