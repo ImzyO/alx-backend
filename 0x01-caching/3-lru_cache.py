@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""a class LRUCache that inherits from 
+"""
+a class LRUCache that inherits from 
 BaseCaching and is a caching system:
 """
 
@@ -9,12 +10,12 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class LRUCache(BaseCaching):
-    """LRU class"""
-
+    """LRU class inherits from basecaching"""
     def __init__(self):
         """ initializer"""
         super().__init__()
         self.queue = deque()
+
 
     def put(self, key, item):
         """put to create"""
@@ -27,6 +28,7 @@ class LRUCache(BaseCaching):
                 print("DISCARD: " + str(popped))
             self.queue.append(key)
             self.cache_data[key] = item
+
 
     def get(self, key):
         """get to etrieve """
