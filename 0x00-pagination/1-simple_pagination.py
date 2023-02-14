@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 """
-Copy index_range from the previous task and the following class into your code
+Copy index_range from the previous task
+and the following class into your code
 """
+
+
 import csv
 from typing import List
 
+
 class Server:
-    """Server class to paginate a database of popular baby names.
+    """
+    Server class to paginate a database of popular baby names.
     """
     DATA_FILE = "Popular_Baby_Names.csv"
     def __init__(self):
