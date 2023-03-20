@@ -14,9 +14,10 @@ class Server:
     Server class to paginate a database of popular baby names.
     """
     DATA_FILE = "Popular_Baby_Names.csv"
+    
     def __init__(self):
         self.__dataset = None
-    
+
     def get_dataset(self) -> List[List]:
         """Cached dataset
         """
@@ -36,8 +37,7 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """ get items in a page """
-        assert type(page) == int or type(page_size) == 
-        assert page > 0 or page_size > 0
+        assert type(page) == int or type(page_size) == assert page > 0 or page_size > 0
 
         start, end = self.index_range(page, page_size)
 
